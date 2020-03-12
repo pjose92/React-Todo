@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import './components/Todo.css';
 
 
 class App extends React.Component {
@@ -20,19 +21,20 @@ class App extends React.Component {
     };
   };
 
-  trackInputHandler = event => {
+   trackInputHandler = event => {
     this.setState({toDo: event.target.value});
   };
 
   addToDo = event => {
     event.preventDefault();
     const toDos = this.state.list;
-    toDos.push({task: this.state.toDo, id: Date.now(), completed:false});
+    toDos.push({task: this.state.toDo, id: Date.now(), completed: false});
     this.setState({list: toDos});
     this.setState({toDo: ""});
   }
 
   toggleCompleted = id => {
+    console.log("toggle line through")
     let list = this.state.list.slice();
     list=list.map(toDo => {
       if(toDo.id === id) {
@@ -41,11 +43,12 @@ class App extends React.Component {
       } else {
         return toDo;
       }
-    })
+    });
     this.setState({list: list});
   }
 
   clearCompleted = event => {
+    console.log("clear all")
     event.preventDefault();
     let list = this.state.list.slice();
     list = list.filter(toDo => toDo.completed === false);
@@ -55,9 +58,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Todo List App</h1>
+        <h1>Todo List:</h1>
         <List list={this.state.list} handler={this.toggleCompleted} />
-        <TodoForm changeHandler={this.trackInputHandler} value={this.state.toDo} submitHandler={this.addToDo} clearHandler={this.clearCompleted} /> 
+        <TodoForm changeHandler={this.trackInputHandler} value={this.state.toDo} submitHandler={this.addToDo} clearHandler={this.clearCompleted} />
       </div>
     );
   }
