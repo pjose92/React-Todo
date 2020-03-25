@@ -9,6 +9,14 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
 
+  componentDidMount() {
+    this.setState(JSON.parse(localStorage.getItem("state")));
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("state", JSON.stringify(this.state));
+  }
+
   constructor(props) {
     super(props);
     this.state = {

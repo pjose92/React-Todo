@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background-color: #161618;
+  background-color: #ffffff;
 }
 
 h1,
@@ -19,7 +19,7 @@ h6,
 div,
 p,
 span {
-  color: white;
+  color: rgb(8, 8, 8);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -27,13 +27,13 @@ div {
     margin: 4rem auto;
     padding: 1rem 3rem 3rem;
     max-width: 500px;
-    background: #2b28f1;
-    color: #fff;
-    box-shadow: -20px -20px 0px 0px rgba(196, 195, 195, 0.1);
+    background: #f1ead9;
+    color: rgb(3, 3, 3);
+    box-shadow: -20px -20px 0px 0px rgba(44, 44, 44, 0.1);
   }
   
 form > input {
-    background-color: #2d2d37;
+    background-color: #1a1a1f;
     border: 0;
     padding: 6px 0;
     font-size: 1rem;
@@ -71,7 +71,7 @@ input::placeholder {
 h1 {
     text-align: left;
     font-size: 40px;
-    border-bottom: 2px solid #ffffff ;
+    border-bottom: 2px solid #030303 ;
   }
 
 ul {
